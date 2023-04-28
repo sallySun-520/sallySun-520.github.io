@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Http | sallySun'Blog</title><meta name="keywords" content="http"><meta name="author" content="sally sun"><meta name="copyright" content="sally sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、http协议1.http概念http 是我们前后台交互的时候的传输协议（即超文本传输协议）      特点：   只能由前端发起   一次只能说一件事   只能传递字符串  2.工作流程 建立连接：TCP三次握手  发送请求    请求报文  12345678完整的请求报文举例：POST &#x2F;user HTTP&#x2F;1.1      &#x2F;&#x2F; 请求行Host: www.user.comContent-T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Http">
+<meta property="og:url" content="https://sallysun-520.github.io/2023/04/21/Http/index.html">
+<meta property="og:site_name" content="sallySun&#39;Blog">
+<meta property="og:description" content="一、http协议1.http概念http 是我们前后台交互的时候的传输协议（即超文本传输协议）      特点：   只能由前端发起   一次只能说一件事   只能传递字符串  2.工作流程 建立连接：TCP三次握手  发送请求    请求报文  12345678完整的请求报文举例：POST &#x2F;user HTTP&#x2F;1.1      &#x2F;&#x2F; 请求行Host: www.user.comContent-T">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-04-21T12:41:47.474Z">
+<meta property="article:modified_time" content="2023-04-28T12:38:06.289Z">
+<meta property="article:author" content="sally sun">
+<meta property="article:tag" content="http">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sallysun-520.github.io/2023/04/21/Http/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Http',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-28 20:38:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">sallySun'Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Http</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-21T12:41:47.474Z" title="Created 2023-04-21 20:41:47">2023-04-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-28T12:38:06.289Z" title="Updated 2023-04-28 20:38:06">2023-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-End/">Front-End</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Http"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、http协议"><a href="#一、http协议" class="headerlink" title="一、http协议"></a>一、http协议</h1><h2 id="1-http概念"><a href="#1-http概念" class="headerlink" title="1.http概念"></a>1.http概念</h2><p>http 是我们前后台交互的时候的传输协议（即超文本传输协议）    </p>
+<ul>
+<li>特点：</li>
+</ul>
+<ol>
+<li>只能由前端发起  </li>
+<li>一次只能说一件事  </li>
+<li>只能传递字符串</li>
+</ol>
+<h2 id="2-工作流程"><a href="#2-工作流程" class="headerlink" title="2.工作流程"></a>2.工作流程</h2><ol>
+<li><p><strong>建立连接：</strong>TCP三次握手</p>
+</li>
+<li><p><strong>发送请求</strong></p>
+</li>
+</ol>
+<ul>
+<li>请求报文</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">完整的请求报文举例：</span><br><span class="line">POST /user HTTP/1.1      // 请求行</span><br><span class="line">Host: www.user.com</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">accept: application/json</span><br><span class="line">User-agent: Mozilla/5.0. // 以上是首部(请求头)</span><br><span class="line">//（此处必须有一空行） // 空行分割 header 和请求内容</span><br><span class="line">name=world    // 请求体</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>1.请求行</p>
+<blockquote>
+<p>POST &#x2F;user HTTP&#x2F;1.1<br>· POST   请求方式<br>· &#x2F;user  请求 URL（不包含域名）<br>· HTTP&#x2F;1.1  请求协议版本  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2.请求头  </p>
+<blockquote>
+<p>user-agent: Mozilla&#x2F;5.0    表示产生请求的浏览器信息<br>accept: application&#x2F;json   表示客户端希望接受的数据类型<br>Content-Type: application&#x2F;x-www-form-urlencoded    表示客户端发送的实体数据格式,即请求体的数据格式<br>Host: 127.0.0.1  表示请求的主机名（IP）<br><strong>cookie</strong><br>3.请求空行（请求头和请求主体之间要留一个空行）</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>4.请求体（本次请求携带的数据）  </p>
+<blockquote>
+<p>GET 请求是没有请求体数据的<br>POST 请求才有请求体数据的</p>
+</blockquote>
+</blockquote>
+<ol start="3">
+<li><strong>响应请求</strong></li>
+</ol>
+<ul>
+<li>响应报文</li>
+</ul>
+<blockquote>
+<p>1.状态行</p>
+<blockquote>
+<p>HTTP&#x2F;1.1 200 OK<br>·HTTP&#x2F;1.1 服务器使用的 HTTP 协议版本<br>·200 响应状态码<br>·OK 对响应状态码的简单解释</p>
+</blockquote>
+<ol start="2">
+<li>响应头</li>
+</ol>
+<blockquote>
+<p>Date: Jan, 14 Aug 2019 12:42:30 GMT &#x2F;&#x2F; 服务器时间<br>Server: Apache&#x2F;2.4.23 (Win32) OpenSSL&#x2F;1.0.2jPHP&#x2F;5.4.45 &#x2F;&#x2F; 服务器类型<br>Content-Type: text&#x2F;html &#x2F;&#x2F; 服务端给客户端的数据类型,即响应体的数据格式<br>Content-Length: 11 &#x2F;&#x2F; 服务端给客户端的数据长度  </p>
+</blockquote>
+<ol start="3">
+<li>响应体</li>
+</ol>
+<blockquote>
+<p>hello world &#x2F;&#x2F; 服务端给客户端的响应数据</p>
+</blockquote>
+</blockquote>
+<ol start="4">
+<li><strong>断开连接</strong>：TCP四次挥手</li>
+</ol>
+<h2 id="3-常见的HTTP响应状态码"><a href="#3-常见的HTTP响应状态码" class="headerlink" title="3.常见的HTTP响应状态码"></a>3.常见的HTTP响应状态码</h2><ul>
+<li>100~199：请求继续  </li>
+<li>200~299：请求成功  <ul>
+<li><strong>200： 标准请求成功</strong></li>
+</ul>
+</li>
+<li>300~399：重定向  <ul>
+<li><strong>301：永久重定向</strong></li>
+<li><strong>302： 临时重定向</strong></li>
+</ul>
+</li>
+<li>400~499：客户端错误  <ul>
+<li><strong>404： 服务器找不到你请求的 URL</strong></li>
+</ul>
+</li>
+<li>500~599：服务器错误<ul>
+<li><strong>500： 服务器内部错误</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-常见的HTTP请求方式"><a href="#4-常见的HTTP请求方式" class="headerlink" title="4.常见的HTTP请求方式"></a>4.常见的HTTP请求方式</h2><blockquote>
+<ol>
+<li>GET： 一般用于获取一些信息使用（获取列表）</li>
+<li>POST： 一般用于发送一些数据给服务端（登录）</li>
+</ol>
+</blockquote>
+<h1 id="二、cookie"><a href="#二、cookie" class="headerlink" title="二、cookie"></a>二、cookie</h1><ul>
+<li>概念</li>
+</ul>
+<p>HTTP Cookie（也叫 Web Cookie 或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的HTTP协议记录稳定的状态信息成为了可能。</p>
+<ul>
+<li>cookie的特点</li>
+</ul>
+<ol>
+<li>每个域名cookie限制为50条左右  </li>
+<li>容量小,单条cookie不超过4KB  </li>
+<li>有有效期   </li>
+<li>有域名限制,谁设置谁读取，谁存储谁访问  </li>
+<li>以字符串形式存储,存储形式key1&#x3D;value1;key2&#x3D;value2  </li>
+<li>前后端都可以操作  </li>
+<li>发送任何一个请求时候会自动携带cookie里面的内容</li>
+</ol>
+<h2 id="cookie、localStorage和-SessionStorage的区别"><a href="#cookie、localStorage和-SessionStorage的区别" class="headerlink" title="cookie、localStorage和 SessionStorage的区别"></a>cookie、localStorage和 SessionStorage的区别</h2><table>
+<thead>
+<tr>
+<th>对比项目</th>
+<th>cookie</th>
+<th>localstorage</th>
+<th>sessionStorage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据存储时间</td>
+<td>可设置失效时间</td>
+<td>永久</td>
+<td>仅当前会话</td>
+</tr>
+<tr>
+<td>容量</td>
+<td>&lt;&#x3D;4kb</td>
+<td>&lt;&#x3D;5mb</td>
+<td>&lt;&#x3D;5mb</td>
+</tr>
+</tbody></table>
+<h2 id="封装cookie函数"><a href="#封装cookie函数" class="headerlink" title="封装cookie函数"></a>封装cookie函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建cookie函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">$cookie</span>(<span class="params">key, value, json</span>) &#123;</span><br><span class="line">    json = json || &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> cookie_str = <span class="built_in">encodeURIComponent</span>(key) + <span class="string">&#x27;=&#x27;</span> + <span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">isNaN</span>(json.<span class="property">expires</span>)) &#123;</span><br><span class="line">        <span class="keyword">let</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        date.<span class="title function_">setDate</span>(date.<span class="title function_">getDate</span>() + json.<span class="property">expires</span>);</span><br><span class="line">        cookie_str += <span class="string">&#x27;;expires=&#x27;</span> + date;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (json.<span class="property">path</span>) &#123;</span><br><span class="line">        cookie_str += <span class="string">&#x27;;path=&#x27;</span> + json.<span class="property">path</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (json.<span class="property">domain</span>) &#123;</span><br><span class="line">        cookie_str += <span class="string">&#x27;;domain=&#x27;</span> + json.<span class="property">domain</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (json.<span class="property">secure</span>) &#123;</span><br><span class="line">        cookie_str += <span class="string">&#x27;;secure&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">cookie</span> = cookie_str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取cookie函数</span></span><br><span class="line"><span class="comment">// &#x27;name=Tom; url=www.zzl.com; email=michael%40zzl.com&#x27;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">$getCookie</span>(<span class="params">key</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> cookie_str = <span class="variable language_">document</span>.<span class="property">cookie</span>;</span><br><span class="line">    <span class="keyword">let</span> arr = cookie_str.<span class="title function_">split</span>(<span class="string">&#x27;; &#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> list = arr[i].<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (list[<span class="number">0</span>] === <span class="built_in">encodeURIComponent</span>(key)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(list[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除cookie函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">$removeCookie</span>(<span class="params">key, json</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (json) &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="built_in">encodeURIComponent</span>(key) + <span class="string">&#x27;=;expires=&#x27;</span> + <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">0</span>) + <span class="string">&#x27;;path=&#x27;</span> + json.<span class="property">path</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="built_in">encodeURIComponent</span>(key) + <span class="string">&#x27;=;expires=&#x27;</span> + <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sallySun-520.github.io">sally sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sallysun-520.github.io/2023/04/21/Http/">https://sallysun-520.github.io/2023/04/21/Http/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/http/">http</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/28/PhotoShop%E5%B0%8F%E6%8A%80%E5%B7%A7/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">PhotoShop小技巧</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/21/CSS%E9%AB%98%E7%BA%A7/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">CSS高级</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sally sun</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sallySun-520"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81http%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">一、http协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-http%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1.http概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2.工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">3.常见的HTTP响应状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">4.常见的HTTP请求方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81cookie"><span class="toc-number">2.</span> <span class="toc-text">二、cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E3%80%81localStorage%E5%92%8C-SessionStorage%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.</span> <span class="toc-text">cookie、localStorage和 SessionStorage的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85cookie%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">封装cookie函数</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By sally sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
