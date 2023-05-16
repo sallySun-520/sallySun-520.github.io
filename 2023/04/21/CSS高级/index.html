@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CSS高级 | sallySun'Blog</title><meta name="keywords" content="CSS"><meta name="author" content="sally sun"><meta name="copyright" content="sally sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="BFC概念及特性 概念  BFC-Block Formatting Context(块级格式化上下文)  如何触发BFC  a)float值为left或right b)overflow的值为hidden&#x2F;scroll&#x2F;auto c)display的值为table-cell,table-caption,inline-block,flex d)position的值为absolute">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CSS高级 | sallySun'Blog</title><meta name="keywords" content="CSS"><meta name="author" content="sally sun"><meta name="copyright" content="sally sun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="BFC概念及特性 概念 BFC-Block Formatting Context(块级格式化上下文)  如何触发BFC a)float: left或right b)overflow: hidden&#x2F;scroll&#x2F;auto c)display: table-cell,table-caption,inline-block,flex d)position: absolute&amp;#x2F">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS高级">
 <meta property="og:url" content="https://sallysun-520.github.io/2023/04/21/CSS%E9%AB%98%E7%BA%A7/index.html">
 <meta property="og:site_name" content="sallySun&#39;Blog">
-<meta property="og:description" content="BFC概念及特性 概念  BFC-Block Formatting Context(块级格式化上下文)  如何触发BFC  a)float值为left或right b)overflow的值为hidden&#x2F;scroll&#x2F;auto c)display的值为table-cell,table-caption,inline-block,flex d)position的值为absolute">
+<meta property="og:description" content="BFC概念及特性 概念 BFC-Block Formatting Context(块级格式化上下文)  如何触发BFC a)float: left或right b)overflow: hidden&#x2F;scroll&#x2F;auto c)display: table-cell,table-caption,inline-block,flex d)position: absolute&amp;#x2F">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2023-04-21T11:37:01.692Z">
-<meta property="article:modified_time" content="2023-04-28T14:10:24.871Z">
+<meta property="article:modified_time" content="2023-05-04T15:32:29.988Z">
 <meta property="article:author" content="sally sun">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-04-28 22:10:24'
+  postUpdate: '2023-05-04 23:32:29'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,40 +142,38 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">sallySun'Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS高级</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-21T11:37:01.692Z" title="Created 2023-04-21 19:37:01">2023-04-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-28T14:10:24.871Z" title="Updated 2023-04-28 22:10:24">2023-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-End/">Front-End</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CSS高级"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="BFC概念及特性"><a href="#BFC概念及特性" class="headerlink" title="BFC概念及特性"></a>BFC概念及特性</h2><ol>
-<li><strong>概念</strong></li>
-</ol>
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">sallySun'Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS高级</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-21T11:37:01.692Z" title="Created 2023-04-21 19:37:01">2023-04-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-05-04T15:32:29.988Z" title="Updated 2023-05-04 23:32:29">2023-05-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-End/">Front-End</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CSS高级"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="BFC概念及特性"><a href="#BFC概念及特性" class="headerlink" title="BFC概念及特性"></a>BFC概念及特性</h2><ol>
+<li><p><strong>概念</strong></p>
 <p>BFC-Block Formatting Context(块级格式化上下文)</p>
-<ol start="2">
-<li><strong>如何触发BFC</strong></li>
-</ol>
-<p>a)float值为left或right</p>
-<p>b)overflow的值为hidden&#x2F;scroll&#x2F;auto</p>
-<p>c)display的值为table-cell,table-caption,inline-block,flex</p>
-<p>d)position的值为absolute&#x2F;fixed</p>
-<ol start="3">
-<li><strong>BFC特性</strong></li>
-</ol>
-<ul>
-<li><p>父级触发了BFC，浮动的子元素会被父元素计算高度  &#x2F;&#x2F;高度塌陷</p>
 </li>
-<li><p>子元素设置的margin值不会传递给父级（父级触发了BFC） &#x2F;&#x2F;外边距合并</p>
+<li><p><strong>如何触发BFC</strong></p>
+<p>a)float: left或right</p>
+<p>b)overflow: hidden&#x2F;scroll&#x2F;auto</p>
+<p>c)display: table-cell,table-caption,inline-block,flex</p>
+<p>d)position: absolute&#x2F;fixed</p>
 </li>
-<li><p>同时设置上下margin的两个元素，margin值不会发生重叠（给其中一个元素外层包含一个父级，并触发BFC）&#x2F;&#x2F;外边距合并</p>
+<li><p><strong>BFC作用</strong></p>
 </li>
-<li><p>非浮动元素不会覆盖浮动元素的位置（非浮动元素触发了BFC）</p>
-</li>
-</ul>
-<p>（两个div 第一个浮动 第二个可以用overflow：hidden 就不会重叠 ）</p>
-<ol start="4">
-<li><strong>BFC作用</strong></li>
 </ol>
 <ul>
 <li><p>解决上下margin重叠问题</p>
+<p><strong>给谁触发：</strong>给其中一个元素外层包含一个父级，并触发BFC，</p>
+<p><strong>效果：</strong>同时设置上下margin的两个元素，margin值不会发生重叠</p>
 </li>
-<li><p>用于清除浮动，计算BFC高度 （解决高度塌陷问题）</p>
+<li><p>解决外边距合并</p>
+<p><strong>给谁触发：</strong>父级触发了BFC，</p>
+<p><strong>效果：</strong>子元素设置的margin值不会传递给父级</p>
 </li>
-<li><p>用于多列布局(会写)</p>
+<li><p>解决高度塌陷问题</p>
+<p><strong>给谁触发：</strong>父级触发了BFC，</p>
+<p><strong>效果：</strong>浮动的子元素会被父元素计算高度</p>
+</li>
+<li><p>实现多列布局</p>
+<p><strong>给谁触发：</strong>非浮动元素触发了BFC</p>
+<p><strong>效果：</strong>非浮动元素不会覆盖浮动元素的位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=&quot;leftDiv&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=&quot;rightDiv&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=&quot;cenDiv&quot;&gt;hello world&lt;/<span class="selector-tag">div</span>&gt;   (非浮动写在最后)</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br><span class="line"></span><br><span class="line">* &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.leftDiv</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background</span>: red;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.rightDiv</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background</span>: blue;</span><br><span class="line">	<span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cenDiv</span> &#123;</span><br><span class="line">    //不要设置宽度</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background</span>: yellow;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;（重点）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 <li><p>与浮动元素相邻的已生成BFC的元素不能与浮动元素互相覆盖。利用该特性可以作为多列布局的一种实现方式</p>
 </li>
@@ -218,4 +216,157 @@
 <li><p>改变盒子模型</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br></pre></td></tr></table></figure></li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sallySun-520.github.io">sally sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sallysun-520.github.io/2023/04/21/CSS%E9%AB%98%E7%BA%A7/">https://sallysun-520.github.io/2023/04/21/CSS%E9%AB%98%E7%BA%A7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSS/">CSS</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/21/Http/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Http</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/21/react/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">React基础</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sally sun</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sallySun-520"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">BFC概念及特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%A0%B7%E5%BC%8F%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">三种样式表的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link%E5%92%8Cimport%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">link和import引入的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%EF%BC%9Aget%E5%92%8Cpost%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">扩展：get和post区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%98%85%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E5%8F%B7%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%BF%85%E9%A1%BB%E6%BB%A1%E8%B6%B3%E4%BB%A5%E4%B8%8B%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">★单行文本省略号设置，必须满足以下四个条件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text">盒模型</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By sally sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+<h2 id="不同元素隐藏的区别"><a href="#不同元素隐藏的区别" class="headerlink" title="不同元素隐藏的区别"></a>不同元素隐藏的区别</h2><ul>
+<li><p>display: none; 从文档流消失，不占据文档空间，但是还存在DOM树中</p>
+</li>
+<li><p>visibility: hidden; 和 opacity: 0; 还是会占据文档空间</p>
+</li>
+<li><p>display: none; 和 visibility: hidden; 绑定的事件不会触发</p>
+</li>
+<li><p>opacity: 0; 的元素绑定的事件还是会触发事件</p>
+</li>
+</ul>
+<h2 id="相对定位，绝对定位，固定定位三者的区别"><a href="#相对定位，绝对定位，固定定位三者的区别" class="headerlink" title="相对定位，绝对定位，固定定位三者的区别"></a><strong>相对定位，绝对定位，固定定位三者的区别</strong></h2><p><strong>1）参照物不同</strong></p>
+<p>相对定位  自身</p>
+<p>绝对定位  离他最近的有定位属性的包含块</p>
+<p>固定定位  可视窗口</p>
+<p><strong>2）是否保留位置</strong></p>
+<p>相对定位 不脱离文档流 位置保留</p>
+<p>绝对定位 固定定位 会脱离文档流 位置会被其他元素占据</p>
+<p>注意：相对浏览器时 absolute是针对整个页面 fixed针对可视窗口</p>
+<h3 id="高度塌陷问题（常见的几种清除浮动的方案及其优缺点）"><a href="#高度塌陷问题（常见的几种清除浮动的方案及其优缺点）" class="headerlink" title="高度塌陷问题（常见的几种清除浮动的方案及其优缺点）"></a>高度塌陷问题（常见的几种清除浮动的方案及其优缺点）</h3><ul>
+<li><p>原因：<strong>父元素高度自适应</strong>，子元素浮动后，导致父元素高度为0，叫做高度塌陷问题</p>
+</li>
+<li><p>解决方案：</p>
+</li>
+</ul>
+<ol>
+<li>给父元素设置高度</li>
+</ol>
+<p>​       缺点：设置固定高度以后父元素高度就不能自适应了 </p>
+<ol start="2">
+<li><p>给父元素设置overflow:hidden;</p>
+<ul>
+<li><p>原理：由于父元素高度自适应，子元素浮动，脱离文档流不再占据空间，导致父元素高度为0，当给父元素设置overflow:hidden;后，<strong>触发BFC机制</strong>，此时闭合了子元素浮动，子元素重新参与父元素高度计算，父元素高度不再为0；</p>
+</li>
+<li><p>缺点：显示在父元素框之外的部分会被隐藏</p>
+</li>
+</ul>
+</li>
+<li><p>在浮动子元素末尾添加一个空div,并设置如下样式：</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>; </span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​			缺点：造成代码冗余</p>
+<ol start="4">
+<li>万能清除浮动法</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">父元素<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:””;</span><br><span class="line">    <span class="attribute">display</span>:block;  //创建和上面一样的盒子</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;  //模仿上面方法</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;  //保留住位置 有内容也不显示</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常见浏览器兼容性问题"><a href="#常见浏览器兼容性问题" class="headerlink" title="常见浏览器兼容性问题"></a>常见浏览器兼容性问题</h2><ol>
+<li><p>表单元素行高对齐方式不一致</p>
+<p>解决方案：</p>
+<p>1）input{float:left;}</p>
+<p>2）给input添加一致的vertical-align属性值（middle&#x2F;top&#x2F;bottom都行）</p>
+</li>
+<li><p>图片默认有间隙</p>
+<p>解决方案：</p>
+<p>1）img{display：block;}  适合给单个img设</p>
+<p>2）img{float:left;}  适合多个图片时候用 左右上下都能去掉 父元素要加overflow:hidden</p>
+</li>
+<li><p>在IE6中设置较小高度的容器时，显示不正确（都以高度大于19px显示）</p>
+<p>解决方案：overflow:hidden;</p>
+</li>
+<li><p>IE6不能识别min-height属性</p>
+<p>解决方法：min-height:100px; _height：100px; （添加下划线的css属性只有IE6识别，其他浏览器不识别）</p>
+</li>
+<li><p>IE8及以下浏览器不能识别opacity属性</p>
+<p>解决方案：opacity:0.5; filter:alpha(opacity&#x3D;50)；(两句话都要写)</p>
+</li>
+</ol>
+<h2 id="水平垂直居中问题"><a href="#水平垂直居中问题" class="headerlink" title="水平垂直居中问题"></a>水平垂直居中问题</h2><ol>
+<li><p>已知大小的元素在屏幕窗口水平垂直都居中<br>元素{width:100px;height:100px;position:fixed;left:50%;top:50%;margin-left:-50px;margin-top:-50px;}</p>
+</li>
+<li><p>未知大小的元素在屏幕窗口水平垂直居中<br>元素{position:fixed;left:0;right:0;top:0;bottom:0; margin:auto;}</p>
+</li>
+<li><p>已知大小的子元素在父元素中水平垂直居中<br>父元素{position:relative;}<br>子元素{width:100px;height:100px;position:absolute;left:50%;top:50%;margin-left:-50px;margin-top:-50px;}</p>
+</li>
+<li><p>未知大小的子元素在父元素中水平垂直居中<br>父元素{position：relative}<br>子元素{position:absolute;left:0;right:0;top:0;bottom:0; margin:auto;}</p>
+</li>
+<li><p>使用flex布局的方式实现已知或未知大小的元素在屏幕窗口水平垂直都居中</p>
+<p>html,body{height:100%;    让html，body的高度等于屏幕窗口的高度（高度自适应）}</p>
+<p>body{display:flex;justify-content:center;align-items:center;}</p>
+</li>
+<li><p>使用flex布局的方式实现已知或未知大小的子元素在父元素中水平垂直都居中</p>
+<p>父元素{display:flex;justify-content:center;align-items:center;}</p>
+</li>
+</ol>
+<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><h4 id="1-站外优化"><a href="#1-站外优化" class="headerlink" title="1.站外优化"></a>1.站外优化</h4><p>1）百度推广</p>
+<p>2）网站流量分析</p>
+<p>3）网站品牌建设</p>
+<h4 id="2-站内优化"><a href="#2-站内优化" class="headerlink" title="2.站内优化"></a>2.站内优化</h4><p>1）页面主题优化</p>
+<p>给网站添加合理的网站标题</p>
+<p>2）页面头部优化</p>
+<p>添加关键词和描述</p>
+<meta name=”keywords” content=”视频，...”>
+
+<meta name=”description” content=”腾讯视频是......”
+
+<p>3）添加网站地图或网站导航</p>
+<p>4）添加友情链接</p>
+<p>5）给img标签添加alt属性</p>
+<p>6）超链接优化</p>
+<p>​     a)尽量避免使用flash做超链接或使用图片热点连接，因为搜索引擎无法识别他们上的内容</p>
+<p>b)给a添加title属性</p>
+<p>7)避免大体积页面</p>
+<p>​     格式清晰，结构分明，代码简化，避免代码冗余</p>
+<h2 id="flex为1重要应用"><a href="#flex为1重要应用" class="headerlink" title="flex为1重要应用"></a>flex为1重要应用</h2><ul>
+<li>flex默认值是 flex:0 1 auto;</li>
+</ul>
+<blockquote>
+<p>即：</p>
+<p>flex-grow的默认值为<strong>0</strong>，即使父元素存在剩余空间也不放大</p>
+<p>flex-shrink的默认值为<strong>1</strong>，父元素空间不足时，flex项目等比例缩小</p>
+<p>flex-basis默认为auto时，先看有没有width,没有width就根据内容撑开</p>
+</blockquote>
+<ul>
+<li>flex:1是 flex:1 1 0% 的简写</li>
+</ul>
+<blockquote>
+<p>flex-grow值为1时，flex项目等比例放大占满flex容器（等比例分配剩余空间）</p>
+<p>flex-shrink的默认值为<strong>1</strong>，父元素空间不足时，flex项目等比例缩小</p>
+<p>flex-basis为0时，表现上，该item会折叠到最小的宽度（就是全是剩余空间）</p>
+</blockquote>
+<ol>
+<li><p>应用1：分配剩余空间给某个flex项目</p>
+</li>
+<li><p>应用2：等比例分配剩余空间</p>
+</li>
+</ol>
+<h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><p>1.概念</p>
+<p><strong>响应式是指根据不同设备浏览器分辨率或尺寸来展示不同页面结构、行为、表现的设计方式（考试）</strong></p>
+<p>2.原理</p>
+<p>响应式设计的基本原理时通过<strong>媒体查询</strong>检测不同的设备屏幕尺寸做处理，页面头部必须有meta声明viewport</p>
+<meta name=”viewport” content=”width=device-width”>  （快捷键meta:vp）
+
+<p>3.优缺点</p>
+<p>优点：解决了多设备屏幕适应问题，灵活性更强</p>
+<p>缺点：工作量大，加载时间变长</p>
+<p>4、媒体查询</p>
+<ol>
+<li>外联式媒体查询</li>
+</ol>
+<link rel=”stylesheet” media=”screen and (min-width:960px)” href=”red.css”>
+
+<p>注：当屏幕窗口宽度大于等于960px时，引入red.css文件</p>
+<ol start="2">
+<li>内嵌式媒体查询</li>
+</ol>
+<p><strong>@media screen and (max-width:960px){</strong></p>
+<p>​     <strong>body{background:red;}</strong></p>
+<p>}</p>
+<p>注：当屏幕窗口宽度小于等于960px时，body背景为红色</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://sallySun-520.github.io">sally sun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://sallysun-520.github.io/2023/04/21/CSS%E9%AB%98%E7%BA%A7/">https://sallysun-520.github.io/2023/04/21/CSS%E9%AB%98%E7%BA%A7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSS/">CSS</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/21/Http/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Http</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/21/react/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">React基础</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sally sun</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sallySun-520"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">BFC概念及特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%A0%B7%E5%BC%8F%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">三种样式表的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link%E5%92%8Cimport%E5%BC%95%E5%85%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">link和import引入的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%EF%BC%9Aget%E5%92%8Cpost%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">扩展：get和post区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%98%85%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E5%8F%B7%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%BF%85%E9%A1%BB%E6%BB%A1%E8%B6%B3%E4%BB%A5%E4%B8%8B%E5%9B%9B%E4%B8%AA%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">★单行文本省略号设置，必须满足以下四个条件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text">盒模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%85%83%E7%B4%A0%E9%9A%90%E8%97%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">7.</span> <span class="toc-text">不同元素隐藏的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%EF%BC%8C%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%EF%BC%8C%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E4%B8%89%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">8.</span> <span class="toc-text">相对定位，绝对定位，固定定位三者的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%EF%BC%88%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%A1%88%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">高度塌陷问题（常见的几种清除浮动的方案及其优缺点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-number">9.</span> <span class="toc-text">常见浏览器兼容性问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98"><span class="toc-number">10.</span> <span class="toc-text">水平垂直居中问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SEO%E4%BC%98%E5%8C%96"><span class="toc-number">11.</span> <span class="toc-text">SEO优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AB%99%E5%A4%96%E4%BC%98%E5%8C%96"><span class="toc-number">11.0.1.</span> <span class="toc-text">1.站外优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AB%99%E5%86%85%E4%BC%98%E5%8C%96"><span class="toc-number">11.0.2.</span> <span class="toc-text">2.站内优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex%E4%B8%BA1%E9%87%8D%E8%A6%81%E5%BA%94%E7%94%A8"><span class="toc-number">12.</span> <span class="toc-text">flex为1重要应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="toc-number">12.1.</span> <span class="toc-text">响应式布局</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"></span></a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By sally sun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
